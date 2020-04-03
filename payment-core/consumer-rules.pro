@@ -1,0 +1,3 @@
+-flattenpackagehierarchy com.aitime.android.payment
+-keep class com.aitime.android.payment.** {*;}
+-keepnames class * implements com.aitime.android.payment.core.IPayment
