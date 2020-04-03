@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android // 配置
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        buildTypes {
+            release {
+                minifyEnabled true
+                consumerProguardFiles 'consumer-rules.pro'
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+            }
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.aitime.android:payment-core:1.0.0'
+
+    // Braintree(https://developers.braintreepayments.com/guides/client-sdk/setu/android/v3)
+    implementation('com.braintreepayments.api:drop-in:4.5.0') {
+        exclude group: 'com.braintreepayments.api', module: 'braintree'
+        exclude group: 'com.braintreepayments.api', module: 'three-d-secure'
+    }
+
+    implementation 'com.braintreepayments.api:braintree:3.9.0'
+    implementation 'com.braintreepayments.api:google-payment:3.3.1'
+
+    // Google dependencies
+    implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+}
+
+
+// Bintray
+apply from: '../gradle/bintray.gradle'
+
+def bintray = rootProject.ext.bintray // 配置
+
+publish {
+    bintrayUser = bintray.bintrayUser
+    bintrayKey = bintray.bintrayKey
+    dryRun = bintray.dryRun
+    override = bintray.override
+    userOrg = bintray.userOrg
+    groupId = bintray.groupId
+    website = bintray.website
+    artifactId = 'payment-braintree'
+    uploadName = 'Payment-Braintree'
+    publishVersion = '1.0.0'
+    desc = 'Tools for Android payment Braintree.'
+}
