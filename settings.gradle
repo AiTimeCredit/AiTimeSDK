@@ -1,0 +1,8 @@
+rootProject.name='AiTimeSDK'
+include ':app'
+include ':aitime'
+include ':deviceid'
+include ':security'
+include ':payment-core'
+include ':payment-cashfree'
+include ':payment-razorpay'

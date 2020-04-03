@@ -1,0 +1,22 @@
+ext {
+
+    android = [ // 配置信息
+                compileSdkVersion: 29,
+                buildToolsVersion: "29.0.3",
+                minSdkVersion    : 19,
+                targetSdkVersion : 29,
+                versionCode      : 1,
+                versionName      : "1.0"
+    ]
+
+    bintray = [
+            userOrg    : "aitime",
+            groupId    : "com.aitime.android",
+            website    : "https://github.com/AiTimeCredit/AiTimeSDK",
+            bintrayUser: "aitime",
+            bintrayKey : "a8435e10da1d4af64ff444ce2ea6579f184e4762",
+            dryRun     : false,
+            override   : true
+    ]
+
+}
