@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android // 配置
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        buildTypes {
+            release {
+                minifyEnabled true
+                consumerProguardFiles 'consumer-rules.pro'
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+            }
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+    }
+
+}
+
+repositories {
+    flatDir { dirs 'libs' }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    compileOnly 'androidx.core:core:1.2.0'
+    compileOnly 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.exifinterface:exifinterface:1.2.0'
+}
+
+
+// Bintray
+apply from: '../gradle/bintray.gradle'
+
+def bintray = rootProject.ext.bintray // 配置
+
+publish {
+    bintrayUser = bintray.bintrayUser
+    bintrayKey = bintray.bintrayKey
+    dryRun = bintray.dryRun
+    override = bintray.override
+    userOrg = bintray.userOrg
+    groupId = bintray.groupId
+    website = bintray.website
+    artifactId = 'ocr-camera'
+    uploadName = 'OCR-Camera'
+    publishVersion = '1.0.0'
+    desc = 'Tools for Android OCR camera.'
+}

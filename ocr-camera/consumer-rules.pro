@@ -1,0 +1,2 @@
+-flattenpackagehierarchy com.aitime.android.ocr.camera
+-keep class com.aitime.android.ocr.camera.** {*;}
