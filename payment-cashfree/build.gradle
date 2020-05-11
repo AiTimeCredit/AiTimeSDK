@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.kezong.fat-aar'
 
 def config = rootProject.ext.android // 配置
 
@@ -18,7 +19,6 @@ android {
     buildTypes {
         buildTypes {
             release {
-                minifyEnabled true
                 consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
@@ -31,10 +31,20 @@ android {
 
 }
 
+repositories {
+    flatDir { dirs 'libs' }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly 'androidx.annotation:annotation:1.1.0'
-    implementation project(':payment-core')
+    implementation 'com.aitime.android:payment-core:1.0.2'
+
+    embed(name: 'cashfreesdk-1.4-release', ext: 'aar')
+    embed(name: 'google-pay-client-api-1.0.0', ext: 'aar')
+
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.android.gms:play-services-tasks:17.0.2'
 }
 
 
@@ -52,7 +62,7 @@ publish {
     groupId = bintray.groupId
     website = bintray.website
     artifactId = 'payment-cashfree'
-    uploadName = 'Payment Cashfree'
-    publishVersion = '1.0.0'
+    uploadName = 'Payment-Cashfree'
+    publishVersion = '1.0.2'
     desc = 'Tools for Android payment Cashfree.'
 }

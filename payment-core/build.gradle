@@ -52,6 +52,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-core'
     uploadName = 'Payment-Core'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.2'
     desc = 'Tools for Android payment core.'
 }

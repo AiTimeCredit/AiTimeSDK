@@ -35,7 +35,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly 'androidx.appcompat:appcompat:1.1.0'
     compileOnly 'androidx.annotation:annotation:1.1.0'
-    implementation 'com.aitime.android:payment-core:1.0.0'
+    implementation 'com.aitime.android:payment-core:1.0.2'
 }
 
 
@@ -54,6 +54,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-offline'
     uploadName = 'Payment-Offline'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.2'
     desc = 'Tools for Android payment Offline.'
 }

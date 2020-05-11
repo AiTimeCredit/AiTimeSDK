@@ -33,10 +33,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.aitime.android:payment-core:1.0.1'
+
+    implementation 'com.aitime.android:payment-core:1.0.2'
 
     // Adyen(https://docs.adyen.com/checkout/android/drop-in)
-    implementation 'com.adyen.checkout:drop-in:3.6.4'
+    api 'com.adyen.checkout:drop-in:3.6.4'
 }
 
 
@@ -55,6 +56,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-adyen'
     uploadName = 'Payment-Adyen'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.2'
     desc = 'Tools for Android payment Adyen.'
 }
