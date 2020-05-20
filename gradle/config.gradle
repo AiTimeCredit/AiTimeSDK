@@ -13,8 +13,8 @@ ext {
             userOrg    : "aitime",
             groupId    : "com.aitime.android",
             website    : "https://github.com/AiTimeCredit/AiTimeSDK",
-            bintrayUser: "aitime",
-            bintrayKey : "a8435e10da1d4af64ff444ce2ea6579f184e4762",
+            bintrayUser: "bintrayUser",
+            bintrayKey : "bintrayKey",
             dryRun     : false,
             override   : true
     ]

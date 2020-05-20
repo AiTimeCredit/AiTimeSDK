@@ -1,5 +1,4 @@
--flattenpackagehierarchy com.aitime.android.payment
--keepnames class * implements com.aitime.android.payment.core.IPayment
+-keep class * implements com.aitime.android.payment.core.IPayment
 
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
