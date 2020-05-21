@@ -2,7 +2,7 @@
 To use this library in your android project, just simply add the following dependency into your project `build.gradle` file:
 ``` gradle
 dependencies {
-    implementation 'com.aitime.android:deviceid:1.0.0'
+    implementation 'com.aitime.android:deviceid:1.0.1'
 }
 ```
 

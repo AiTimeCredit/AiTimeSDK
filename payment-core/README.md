@@ -5,17 +5,17 @@ To use this library in your android project, just simply add the following depen
 ``` gradle
 dependencies {
     // payment core
-    implementation 'com.aitime.android:payment-core:1.0.3'
+    implementation 'com.aitime.android:payment-core:1.0.4'
     // optional - payment for offline
-    implementation 'com.aitime.android:payment-offline:1.0.3'
+    implementation 'com.aitime.android:payment-offline:1.0.4'
     // optional - payment for cashfree
-    implementation 'com.aitime.android:payment-cashfree:1.0.3'
+    implementation 'com.aitime.android:payment-cashfree:1.0.4'
     // optional - payment for razorpay
-    implementation 'com.aitime.android:payment-razorpay:1.0.3'
+    implementation 'com.aitime.android:payment-razorpay:1.0.4'
     // optional - payment for adyen
-    implementation 'com.aitime.android:payment-adyen:1.0.3'
+    implementation 'com.aitime.android:payment-adyen:1.0.4'
     // optional - payment for braintree
-    implementation 'com.aitime.android:payment-braintree:1.0.3'
+    implementation 'com.aitime.android:payment-braintree:1.0.4'
 }
 ```
 
@@ -132,7 +132,7 @@ if (payment != null) {
     payment.payment(PaymentInfo info, Map<String, String> params);
 }
 ```
-The `info` contains some payment info, such as `orderId`, `currency`, `payMoney`, `name`, `email`, `contact` and more. The `params` contains some parameters that call up the payment SDK,such as `Cashfree` requires `appId`, `orderId`, `token` and `stage` parameters,`Razorpay` requires `razorpayKey` and `razorId` parameters,`Adyen` requires `environmentName`、`publicKey`、`countryCode`、`merchantAccount`、`paymentMethods` and `shopperLocale` parameters,`Braintree` requires `token` parameters,`Offline` requires `explain` parameters.
+The `info` contains some payment info, such as `orderId`, `currency`, `payMoney`, `name`, `email`, `contact` and more. The `params` contains some parameters that call up the payment SDK, such as `Cashfree` requires `appId`, `orderId`, `token` and `stage` parameters, `Razorpay` requires `razorpayKey` and `razorId` parameters, `Adyen` requires `environmentName`、`publicKey`、`countryCode`、`merchantAccount`、`paymentMethods` and `shopperLocale` parameters, `Braintree` requires `token` parameters, `Offline` requires `explain` parameters.
 
 ### Handle payment result ###
 Implementation the `com.aitime.android.payment.core.IPaymentCallback` class in the invoking class to receive callbacks for the payment result:

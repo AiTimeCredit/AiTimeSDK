@@ -59,6 +59,6 @@ publish {
     website = bintray.website
     artifactId = 'ocr-camera'
     uploadName = 'OCR-Camera'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.4'
     desc = 'Tools for Android OCR camera.'
 }

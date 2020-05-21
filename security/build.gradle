@@ -51,6 +51,6 @@ publish {
     website = bintray.website
     artifactId = 'security'
     uploadName = 'Security'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Tools for Android encryption and decryption.'
 }

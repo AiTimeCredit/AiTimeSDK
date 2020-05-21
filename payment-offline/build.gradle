@@ -18,7 +18,7 @@ android {
     buildTypes {
         buildTypes {
             release {
-                minifyEnabled true
+                minifyEnabled false
                 consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
@@ -36,7 +36,7 @@ dependencies {
     compileOnly 'androidx.appcompat:appcompat:1.1.0'
     compileOnly 'androidx.annotation:annotation:1.1.0'
 
-    api 'com.aitime.android:payment-core:1.0.3'
+    api 'com.aitime.android:payment-core:1.0.4'
 }
 
 
@@ -55,6 +55,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-offline'
     uploadName = 'Payment-Offline'
-    publishVersion = '1.0.3'
+    publishVersion = '1.0.4'
     desc = 'Tools for Android payment Offline.'
 }

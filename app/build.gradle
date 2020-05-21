@@ -43,9 +43,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.henley.android:permissionhelper:1.0.3@aar'
 
-    implementation 'com.aitime.android:deviceid:1.0.0'
-    implementation 'com.aitime.android:security:1.0.0'
-    implementation 'com.aitime.android:payment-core:1.0.2'
+    implementation 'com.aitime.android:deviceid:1.0.1'
+    implementation 'com.aitime.android:security:1.0.1'
+    implementation 'com.aitime.android:ocr-camera:1.0.4'
+    implementation 'com.aitime.android:payment-core:1.0.4'
 
     implementation project(':aitime')
 }

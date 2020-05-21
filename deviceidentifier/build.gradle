@@ -51,6 +51,6 @@ publish {
     website = bintray.website
     artifactId = 'deviceid'
     uploadName = 'DeviceIdentifier'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Tool for generating the unique identifier of the device.'
 }
