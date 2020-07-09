@@ -11,15 +11,12 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         buildTypes {
             release {
                 minifyEnabled true
-                consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
             debug {
@@ -51,6 +48,6 @@ publish {
     website = bintray.website
     artifactId = 'deviceid'
     uploadName = 'DeviceIdentifier'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'Tool for generating the unique identifier of the device.'
 }

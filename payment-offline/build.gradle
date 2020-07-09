@@ -11,15 +11,12 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         buildTypes {
             release {
                 minifyEnabled false
-                consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
             debug {
@@ -36,7 +33,7 @@ dependencies {
     compileOnly 'androidx.appcompat:appcompat:1.1.0'
     compileOnly 'androidx.annotation:annotation:1.1.0'
 
-    api 'com.aitime.android:payment-core:1.0.4'
+    api 'com.aitime.android:payment-core:1.0.5'
 }
 
 
@@ -55,6 +52,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-offline'
     uploadName = 'Payment-Offline'
-    publishVersion = '1.0.4'
+    publishVersion = '1.0.5'
     desc = 'Tools for Android payment Offline.'
 }

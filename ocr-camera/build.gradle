@@ -11,15 +11,12 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         buildTypes {
             release {
                 minifyEnabled true
-                consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
             debug {
@@ -38,7 +35,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'libs', include: ['*.aar'])
-    compileOnly 'androidx.core:core:1.2.0'
+    compileOnly 'androidx.core:core:1.3.0'
     compileOnly 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.exifinterface:exifinterface:1.2.0'
 }
@@ -59,6 +56,6 @@ publish {
     website = bintray.website
     artifactId = 'ocr-camera'
     uploadName = 'OCR-Camera'
-    publishVersion = '1.0.4'
+    publishVersion = '1.0.5'
     desc = 'Tools for Android OCR camera.'
 }

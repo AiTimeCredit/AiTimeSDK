@@ -1,8 +1,8 @@
 ## 依赖 ##
 要在您的 Android 项目中使用此 SDK，只需将以下依赖项添加到项目的 `build.gradle` 文件中：
-``` gradle
+```gradle
 dependencies {
-    implementation 'com.aitime.android:deviceid:1.0.1'
+    implementation 'com.aitime.android:deviceid:1.0.2'
 }
 ```
 

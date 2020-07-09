@@ -11,15 +11,12 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         buildTypes {
             release {
                 minifyEnabled false
-                consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
             debug {
@@ -33,7 +30,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.aitime.android:payment-core:1.0.4'
+    api 'com.aitime.android:payment-core:1.0.5'
 
     // Braintree(https://developers.braintreepayments.com/guides/client-sdk/setu/android/v3)
     api('com.braintreepayments.api:drop-in:4.5.0') {
@@ -64,6 +61,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-braintree'
     uploadName = 'Payment-Braintree'
-    publishVersion = '1.0.4'
+    publishVersion = '1.0.5'
     desc = 'Tools for Android payment Braintree.'
 }

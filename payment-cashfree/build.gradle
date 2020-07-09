@@ -11,15 +11,12 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-
-        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         buildTypes {
             release {
                 minifyEnabled false
-                consumerProguardFiles 'consumer-rules.pro'
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
             }
             debug {
@@ -35,7 +32,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly 'androidx.annotation:annotation:1.1.0'
 
-    api 'com.aitime.android:payment-core:1.0.4'
+    api 'com.aitime.android:payment-core:1.0.5'
 
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.aitime.cashfree:cashfree-payment:1.4'
@@ -59,6 +56,6 @@ publish {
     website = bintray.website
     artifactId = 'payment-cashfree'
     uploadName = 'Payment-Cashfree'
-    publishVersion = '1.0.4'
+    publishVersion = '1.0.5'
     desc = 'Tools for Android payment Cashfree.'
 }

@@ -1,1 +1,1 @@
--keep class * implements com.aitime.android.payment.core.IPayment
+-keepnames class * implements com.aitime.android.payment.core.IPayment

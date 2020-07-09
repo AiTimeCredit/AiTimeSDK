@@ -2,9 +2,9 @@
 
 ## Installation ##
 To use this library in your android project, just simply add the following dependency into your project `build.gradle` file:
-``` gradle
+```gradle
 dependencies {
-    implementation 'com.aitime.android:ocr-camera:1.0.4'
+    implementation 'com.aitime.android:ocr-camera:1.0.5'
 }
 ```
 

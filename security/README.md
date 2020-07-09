@@ -1,8 +1,8 @@
 ## Installation ##
 To use this library in your android project, just simply add the following dependency into your project `build.gradle` file:
-``` gradle
+```gradle
 dependencies {
-    implementation 'com.aitime.android:security:1.0.1'
+    implementation 'com.aitime.android:security:1.0.2'
 }
 ```
 

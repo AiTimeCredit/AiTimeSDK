@@ -2,20 +2,20 @@
 
 ## Installation ##
 To use this library in your android project, just simply add the following dependency into your project `build.gradle` file:
-``` gradle
+```gradle
 dependencies {
     // payment core
-    implementation 'com.aitime.android:payment-core:1.0.4'
+    implementation 'com.aitime.android:payment-core:1.0.5'
     // optional - payment for offline
-    implementation 'com.aitime.android:payment-offline:1.0.4'
+    implementation 'com.aitime.android:payment-offline:1.0.5'
     // optional - payment for cashfree
-    implementation 'com.aitime.android:payment-cashfree:1.0.4'
+    implementation 'com.aitime.android:payment-cashfree:1.0.5'
     // optional - payment for razorpay
-    implementation 'com.aitime.android:payment-razorpay:1.0.4'
+    implementation 'com.aitime.android:payment-razorpay:1.0.5'
     // optional - payment for adyen
-    implementation 'com.aitime.android:payment-adyen:1.0.4'
+    implementation 'com.aitime.android:payment-adyen:1.0.5'
     // optional - payment for braintree
-    implementation 'com.aitime.android:payment-braintree:1.0.4'
+    implementation 'com.aitime.android:payment-braintree:1.0.5'
 }
 ```
 
