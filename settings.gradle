@@ -1,5 +1,6 @@
 rootProject.name='AiTimeSDK'
 include ':app'
+include ':risk'
 include ':aitime'
 include ':security'
 include ':ocr-camera'
