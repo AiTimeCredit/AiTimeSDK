@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android // 配置
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+
+    buildTypes {
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+            }
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+    }
+
+}
+
+repositories {
+    maven { url "https://artifactory.paytm.in/libs-release-local" }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'androidx.annotation:annotation:1.1.0'
+
+    api 'com.aitime.android:payment-core:1.0.6'
+
+    // Paytm(https://developer.paytm.com/docs/all-in-one-sdk/sdk-based-integration/)
+    implementation 'com.paytm.appinvokesdk:appinvokesdk:1.3'
+
+}
+
+
+// Bintray
+apply from: '../gradle/bintray.gradle'
+
+def bintray = rootProject.ext.bintray // 配置
+
+publish {
+    bintrayUser = bintray.bintrayUser
+    bintrayKey = bintray.bintrayKey
+    dryRun = bintray.dryRun
+    override = bintray.override
+    userOrg = bintray.userOrg
+    groupId = bintray.groupId
+    website = bintray.website
+    artifactId = 'payment-paytm'
+    uploadName = 'Payment-Paytm'
+    publishVersion = '1.0.0'
+    desc = 'Tools for Android payment Paytm.'
+}
