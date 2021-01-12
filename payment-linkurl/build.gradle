@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android // 配置
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 100
+        versionName '1.0.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+            }
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'androidx.appcompat:appcompat:1.2.0'
+    compileOnly 'androidx.annotation:annotation:1.1.0'
+
+    api 'com.aitime.android:payment-core:1.1.4'
+}
+
+
+// Bintray
+apply from: '../gradle/bintray.gradle'
+
+def bintray = rootProject.ext.bintray // 配置
+
+publish {
+    bintrayUser = bintray.bintrayUser
+    bintrayKey = bintray.bintrayKey
+    dryRun = bintray.dryRun
+    override = bintray.override
+    userOrg = bintray.userOrg
+    groupId = bintray.groupId
+    website = bintray.website
+    artifactId = 'payment-offline'
+    uploadName = 'Payment-Offline'
+    publishVersion = '1.0.0'
+    desc = 'Tools for Android payment Offline.'
+}
