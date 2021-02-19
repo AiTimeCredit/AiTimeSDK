@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android // 配置
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 104
+        versionName '1.0.4'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'consumer-rules.pro'
+            }
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.annotation:annotation:1.1.0'
+
+    api 'com.aitime.android:payment-core:1.1.5'
+
+    // PayUmobile(https://mvnrepository.com/artifact/com.payu.upisdk/upisdk)
+    implementation 'com.payu.upisdk:upisdk:1.0.5'
+    implementation 'com.payu.gpay:payu-gpay:1.2.1'
+    implementation 'com.payu.phonepe:phonepe-intent:1.4'
+
+}
+
+
+// Bintray
+apply from: '../gradle/bintray.gradle'
+
+def bintray = rootProject.ext.bintray // 配置
+
+publish {
+    bintrayUser = bintray.bintrayUser
+    bintrayKey = bintray.bintrayKey
+    dryRun = bintray.dryRun
+    override = bintray.override
+    userOrg = bintray.userOrg
+    groupId = bintray.groupId
+    website = bintray.website
+    artifactId = 'payment-payumobile'
+    uploadName = 'Payment-PayUmobile'
+    publishVersion = '1.0.0'
+    desc = 'Tools for Android payment PayUmobile.'
+}
